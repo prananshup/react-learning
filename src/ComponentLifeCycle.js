@@ -19,7 +19,7 @@ class ComponentLifeCycle extends React.Component {
         console.log('in rener');
         return (<div>
             <button onClick={() => this.setState({count: cnt + 1})}>click me</button>
-            <p>{ count }</p>
+            <p>{ cnt }</p>
         </div>);
     }
 }
