@@ -2,9 +2,12 @@ import React from "react";
 
 class ComponentLifeCycle extends React.Component {
 
-    state = {
-        count: 0
-    };
+    constructor(props) {
+        super(props)
+        this.state = {
+            count: 0
+        };
+    }
 
     componentDidMount() {
         console.log('in mount');
