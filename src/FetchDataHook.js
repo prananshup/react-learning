@@ -4,15 +4,20 @@ import axios from "axios";
 const FetchDataHook = () => {
     const [posts, setPosts] = useState([]);
 
-    useEffect(async () => {
-        const data = await axios.get('https://jsonplaceholder.typicode.com/posts');
-        console.log(data.data)
-        setPosts(JSON.stringify(data.data));
-    }, [posts]);
 
+    useEffect(() => {
+        async function fetchData() {
+            const data = await axios.get('https://jsonplaceholder.typicode.com/posts');
+            console.log(data.data)
+            setPosts(JSON.stringify(data.data));
+        }
+        fetchData()
+    }, []);
 
     return (
-        <div> { posts } </div>
+        <div>
+            {posts}    
+        </div>
     )
 }
 
