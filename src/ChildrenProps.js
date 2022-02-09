@@ -18,7 +18,18 @@ class ChildrenProps extends React.Component {
 
     render() {
         console.log( this.props.children );
-        return <>{this.props.children.map(c => <ul> { c.props.children.map(i => <li> {i} </li>) } </ul>)}</>;
+        return (
+          <>
+            {this.props.children.map((c) => (
+              <ul>
+                {" "}
+                {c.props.children.map((i) => (
+                  <li> {i} </li>
+                ))}{" "}
+              </ul>
+            ))}
+          </>
+        );
     }
 
 }
