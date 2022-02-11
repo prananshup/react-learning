@@ -21,7 +21,9 @@ class Counter extends React.Component {
   }
 
   incrementCounter = () => {
-    this.setState({ counter: this.state.counter + 1 });
+    this.setState((prevState, props) => ({
+      counter: prevState.counter + props.incrementBy,
+    }));
   };
 
   render() {
@@ -30,5 +32,9 @@ class Counter extends React.Component {
     );
   }
 }
+
+Counter.defaultProps = {
+  incrementBy: 3,
+};
 
 export default Counter;
